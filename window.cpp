@@ -71,7 +71,7 @@ Window::Window()
     setLayout(layout);
 
 //    minimumSpinBox->setValue(0);
-    maximumSpinBox->setValue(20);
+//    maximumSpinBox->setValue(20);
     valueSpinBox->setValue(5);
 
     setWindowTitle(tr("Sliders"));
@@ -97,9 +97,9 @@ void Window::createControls(const QString &title)
 //    minimumSpinBox->setRange(-100, 100);
 //    minimumSpinBox->setSingleStep(1);
 
-    maximumSpinBox = new QSpinBox;
-    maximumSpinBox->setRange(-100, 100);
-    maximumSpinBox->setSingleStep(1);
+//    maximumSpinBox = new QSpinBox;
+//    maximumSpinBox->setRange(-100, 100);
+//    maximumSpinBox->setSingleStep(1);
 
     valueSpinBox = new QSpinBox;
     valueSpinBox->setRange(-100, 100);
@@ -117,10 +117,10 @@ void Window::createControls(const QString &title)
 //            horizontalSliders, SLOT(setMinimum(int)));
 //    connect(minimumSpinBox, SIGNAL(valueChanged(int)),
 //            verticalSliders, SLOT(setMinimum(int)));
-    connect(maximumSpinBox, SIGNAL(valueChanged(int)),
-            horizontalSliders, SLOT(setMaximum(int)));
-    connect(maximumSpinBox, SIGNAL(valueChanged(int)),
-            verticalSliders, SLOT(setMaximum(int)));
+//    connect(maximumSpinBox, SIGNAL(valueChanged(int)),
+//            horizontalSliders, SLOT(setMaximum(int)));
+//    connect(maximumSpinBox, SIGNAL(valueChanged(int)),
+//            verticalSliders, SLOT(setMaximum(int)));
     connect(invertedAppearance, SIGNAL(toggled(bool)),
             horizontalSliders, SLOT(invertAppearance(bool)));
     connect(invertedAppearance, SIGNAL(toggled(bool)),
@@ -135,7 +135,7 @@ void Window::createControls(const QString &title)
     controlsLayout->addWidget(maximumLabel, 1, 0);
     controlsLayout->addWidget(valueLabel, 2, 0);
 //    controlsLayout->addWidget(minimumSpinBox, 0, 1);
-    controlsLayout->addWidget(maximumSpinBox, 1, 1);
+//    controlsLayout->addWidget(maximumSpinBox, 1, 1);
     controlsLayout->addWidget(valueSpinBox, 2, 1);
     controlsLayout->addWidget(invertedAppearance, 0, 2);
     controlsLayout->addWidget(invertedKeyBindings, 1, 2);

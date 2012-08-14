@@ -72,8 +72,8 @@ private:
     QLabel *minimumLabel;
     QLabel *maximumLabel;
     QLabel *valueLabel;
-    QCheckBox *invertedAppearance;
-    QCheckBox *invertedKeyBindings;
+//    QCheckBox *invertedAppearance;
+//    QCheckBox *invertedKeyBindings;
 //    QSpinBox *minimumSpinBox;
 //    QSpinBox *maximumSpinBox;
     QSpinBox *valueSpinBox;

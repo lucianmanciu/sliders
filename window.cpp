@@ -88,8 +88,8 @@ void Window::createControls(const QString &title)
     maximumLabel = new QLabel(tr("Maximum value:"));
     valueLabel = new QLabel(tr("Current value:"));
 
-    invertedAppearance = new QCheckBox(tr("Inverted appearance"));
-    invertedKeyBindings = new QCheckBox(tr("Inverted key bindings"));
+//    invertedAppearance = new QCheckBox(tr("Inverted appearance"));
+//    invertedKeyBindings = new QCheckBox(tr("Inverted key bindings"));
 
 //! [4] //! [5]
 //    minimumSpinBox = new QSpinBox;
@@ -121,14 +121,14 @@ void Window::createControls(const QString &title)
 //            horizontalSliders, SLOT(setMaximum(int)));
 //    connect(maximumSpinBox, SIGNAL(valueChanged(int)),
 //            verticalSliders, SLOT(setMaximum(int)));
-    connect(invertedAppearance, SIGNAL(toggled(bool)),
-            horizontalSliders, SLOT(invertAppearance(bool)));
-    connect(invertedAppearance, SIGNAL(toggled(bool)),
-            verticalSliders, SLOT(invertAppearance(bool)));
-    connect(invertedKeyBindings, SIGNAL(toggled(bool)),
-            horizontalSliders, SLOT(invertKeyBindings(bool)));
-    connect(invertedKeyBindings, SIGNAL(toggled(bool)),
-            verticalSliders, SLOT(invertKeyBindings(bool)));
+//    connect(invertedAppearance, SIGNAL(toggled(bool)),
+//            horizontalSliders, SLOT(invertAppearance(bool)));
+//    connect(invertedAppearance, SIGNAL(toggled(bool)),
+//            verticalSliders, SLOT(invertAppearance(bool)));
+//    connect(invertedKeyBindings, SIGNAL(toggled(bool)),
+//            horizontalSliders, SLOT(invertKeyBindings(bool)));
+//    connect(invertedKeyBindings, SIGNAL(toggled(bool)),
+//            verticalSliders, SLOT(invertKeyBindings(bool)));
 
     QGridLayout *controlsLayout = new QGridLayout;
     controlsLayout->addWidget(minimumLabel, 0, 0);
@@ -137,8 +137,8 @@ void Window::createControls(const QString &title)
 //    controlsLayout->addWidget(minimumSpinBox, 0, 1);
 //    controlsLayout->addWidget(maximumSpinBox, 1, 1);
     controlsLayout->addWidget(valueSpinBox, 2, 1);
-    controlsLayout->addWidget(invertedAppearance, 0, 2);
-    controlsLayout->addWidget(invertedKeyBindings, 1, 2);
+//    controlsLayout->addWidget(invertedAppearance, 0, 2);
+//    controlsLayout->addWidget(invertedKeyBindings, 1, 2);
     controlsLayout->addWidget(orientationCombo, 3, 0, 1, 3);
     controlsGroup->setLayout(controlsLayout);
 }

@@ -76,7 +76,7 @@ private:
 //    QCheckBox *invertedKeyBindings;
 //    QSpinBox *minimumSpinBox;
 //    QSpinBox *maximumSpinBox;
-    QSpinBox *valueSpinBox;
+//    QSpinBox *valueSpinBox;
     QComboBox *orientationCombo;
 };
 //! [0]

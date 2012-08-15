@@ -60,19 +60,19 @@ Window::Window()
     connect(horizontalSliders, SIGNAL(valueChanged(int)),
 //! [1] //! [2]
             verticalSliders, SLOT(setValue(int)));
-    connect(verticalSliders, SIGNAL(valueChanged(int)),
-            valueSpinBox, SLOT(setValue(int)));
-    connect(valueSpinBox, SIGNAL(valueChanged(int)),
-            horizontalSliders, SLOT(setValue(int)));
+//    connect(verticalSliders, SIGNAL(valueChanged(int)),
+//            valueSpinBox, SLOT(setValue(int)));
+//    connect(valueSpinBox, SIGNAL(valueChanged(int)),
+//            horizontalSliders, SLOT(setValue(int)));
 
     QHBoxLayout *layout = new QHBoxLayout;
-    layout->addWidget(controlsGroup);
     layout->addWidget(stackedWidget);
+    layout->addWidget(controlsGroup);
     setLayout(layout);
 
 //    minimumSpinBox->setValue(0);
 //    maximumSpinBox->setValue(20);
-    valueSpinBox->setValue(5);
+//    valueSpinBox->setValue(5);
 
     setWindowTitle(tr("Sliders"));
 }
@@ -101,9 +101,9 @@ void Window::createControls(const QString &title)
 //    maximumSpinBox->setRange(-100, 100);
 //    maximumSpinBox->setSingleStep(1);
 
-    valueSpinBox = new QSpinBox;
-    valueSpinBox->setRange(-100, 100);
-    valueSpinBox->setSingleStep(1);
+//    valueSpinBox = new QSpinBox;
+//    valueSpinBox->setRange(-100, 100);
+//    valueSpinBox->setSingleStep(1);
 
     orientationCombo = new QComboBox;
     orientationCombo->addItem(tr("Horizontal slider-like widgets"));
@@ -136,7 +136,7 @@ void Window::createControls(const QString &title)
     controlsLayout->addWidget(valueLabel, 2, 0);
 //    controlsLayout->addWidget(minimumSpinBox, 0, 1);
 //    controlsLayout->addWidget(maximumSpinBox, 1, 1);
-    controlsLayout->addWidget(valueSpinBox, 2, 1);
+//    controlsLayout->addWidget(valueSpinBox, 2, 1);
 //    controlsLayout->addWidget(invertedAppearance, 0, 2);
 //    controlsLayout->addWidget(invertedKeyBindings, 1, 2);
     controlsLayout->addWidget(orientationCombo, 3, 0, 1, 3);

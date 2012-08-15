@@ -88,7 +88,7 @@ private:
 //    QSpinBox *minimumSpinBox;
 //    QSpinBox *maximumSpinBox;
 //    QSpinBox *valueSpinBox;
-    QComboBox *orientationCombo;
+    QComboBox *sortCombo;
 };
 
 #endif

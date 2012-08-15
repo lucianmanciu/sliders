@@ -109,12 +109,13 @@ void Window::createControls(const QString &title)
 //    valueSpinBox->setRange(-100, 100);
 //    valueSpinBox->setSingleStep(1);
 
-    orientationCombo = new QComboBox;
-    orientationCombo->addItem(tr("Horizontal slider-like widgets"));
-    orientationCombo->addItem(tr("Vertical slider-like widgets"));
+    sortCombo = new QComboBox;
+    sortCombo->addItem(tr("Q"));
+    sortCombo->addItem(tr("W"));
+    sortCombo->addItem(tr("T"));
 
-    connect(orientationCombo, SIGNAL(activated(int)),
-            stackedWidget, SLOT(setCurrentIndex(int)));
+//    connect(orientationCombo, SIGNAL(activated(int)),
+//            stackedWidget, SLOT(setCurrentIndex(int)));
 //    connect(minimumSpinBox, SIGNAL(valueChanged(int)),
 //            horizontalSliders, SLOT(setMinimum(int)));
 //    connect(minimumSpinBox, SIGNAL(valueChanged(int)),
@@ -150,6 +151,6 @@ void Window::createControls(const QString &title)
 //    controlsLayout->addWidget(valueSpinBox, 2, 1);
 //    controlsLayout->addWidget(invertedAppearance, 0, 2);
 //    controlsLayout->addWidget(invertedKeyBindings, 1, 2);
-    controlsLayout->addWidget(orientationCombo, 3, 0, 1, 3);
+    controlsLayout->addWidget(sortCombo, 4, 3);
     controlsGroup->setLayout(controlsLayout);
 }

@@ -74,32 +74,35 @@ Window::Window()
 }
 
 void Window::createControls(const QString &title)
-//! [3] //! [4]
 {
     controlsGroup = new QGroupBox(title);
-
+    int xval=100;
 //    minimumLabel = new QLabel(tr("Minimum value:"));
 //    maximumLabel = new QLabel(tr("Maximum value:"));
 //    valueLabel = new QLabel(tr("Current value:"));
     quantityLabel = new QLabel(tr("Quantity:"));
-    weightLabel = new QLabel(tr("Weight:"));;
-    temperatureLabel = new QLabel(tr("Temperature:"));;
-    pressureLabel = new QLabel(tr("Pressure:"));;
-    volumeLabel = new QLabel(tr("Volume:"));;
-    quantityColLabel = new QLabel(tr("Quantity"));;
-    weightColLabel = new QLabel(tr("Weight"));;
-    temperatureColLabel = new QLabel(tr("Temperature"));;
-    pressureColLabel = new QLabel(tr("Pressure"));;
-    volumeColLabel = new QLabel(tr("Volume"));;
+    weightLabel = new QLabel(tr("Weight:"));
+    temperatureLabel = new QLabel(tr("Temperature:"));
+    pressureLabel = new QLabel(tr("Pressure:"));
+    volumeLabel = new QLabel(tr("Volume:"));
+    quantityColLabel = new QLabel(tr("Quantity"));
+    weightColLabel = new QLabel(tr("Weight"));
+    temperatureColLabel = new QLabel(tr("Temperature"));
+    pressureColLabel = new QLabel(tr("Pressure"));
+    volumeColLabel = new QLabel(tr("Volume"));
     xLabel = new QLabel(tr("X - >"));;
-    xValueLabel = new QLabel(tr("temp"));;
+    xValueLabel = new QLabel(tr(""));
+    xValueLabel->setNum(xval);
 
     quantityLineEdit = new QLineEdit;
     quantityLineEdit->setFixedWidth(75);
+    quantityLineEdit->setMaxLength(6);
     weightLineEdit = new QLineEdit;
     weightLineEdit->setFixedWidth(75);
+    weightLineEdit->setMaxLength(6);
     temperatureLineEdit = new QLineEdit;
     temperatureLineEdit->setFixedWidth(75);
+    temperatureLineEdit->setMaxLength(6);
     outputTextEdit = new QTextEdit;
 
 //    invertedAppearance = new QCheckBox(tr("Inverted appearance"));
@@ -118,8 +121,8 @@ void Window::createControls(const QString &title)
 //    valueSpinBox->setSingleStep(1);
 
     simulateButton = new QPushButton("Simulate", this);
-    abortButton = new QPushButton("Abort", this);;
-    sortButton = new QPushButton("Sort", this);;
+    abortButton = new QPushButton("Abort", this);
+    sortButton = new QPushButton("Sort", this);
 
     sortCombo = new QComboBox;
     sortCombo->addItem(tr("Q"));

@@ -43,22 +43,18 @@
 #include "slidersgroup.h"
 #include "window.h"
 
-//! [0]
 Window::Window()
 {
-    horizontalSliders = new SlidersGroup(Qt::Horizontal, tr("Horizontal"));
-    verticalSliders = new SlidersGroup(Qt::Vertical, tr("Vertical"));
+    horizontalSliders = new SlidersGroup(Qt::Horizontal, tr("Simulation"));
+    verticalSliders = new SlidersGroup(Qt::Vertical, tr("Simulation"));
 
     stackedWidget = new QStackedWidget;
     stackedWidget->addWidget(horizontalSliders);
     stackedWidget->addWidget(verticalSliders);
 
     createControls(tr("Controls"));
-//! [0]
 
-//! [1]
     connect(horizontalSliders, SIGNAL(valueChanged(int)),
-//! [1] //! [2]
             verticalSliders, SLOT(setValue(int)));
 //    connect(verticalSliders, SIGNAL(valueChanged(int)),
 //            valueSpinBox, SLOT(setValue(int)));
@@ -74,26 +70,34 @@ Window::Window()
 //    maximumSpinBox->setValue(20);
 //    valueSpinBox->setValue(5);
 
-    setWindowTitle(tr("Sliders"));
+    setWindowTitle(tr("Simulated Physics"));
 }
-//! [2]
 
-//! [3]
 void Window::createControls(const QString &title)
 //! [3] //! [4]
 {
     controlsGroup = new QGroupBox(title);
 
-    minimumLabel = new QLabel(tr("Minimum value:"));
-    maximumLabel = new QLabel(tr("Maximum value:"));
-    valueLabel = new QLabel(tr("Current value:"));
+//    minimumLabel = new QLabel(tr("Minimum value:"));
+//    maximumLabel = new QLabel(tr("Maximum value:"));
+//    valueLabel = new QLabel(tr("Current value:"));
+    quantityLabel = new QLabel(tr("Quantity:"));
+    weightLabel = new QLabel(tr("Weight:"));;
+    temperatureLabel = new QLabel(tr("Temperature:"));;
+    pressureLabel = new QLabel(tr("Pressure:"));;
+    volumeLabel = new QLabel(tr("Volume:"));;
+    quantityColLabel = new QLabel(tr("Quantity"));;
+    weightColLabel = new QLabel(tr("Weight"));;
+    temperatureColLabel = new QLabel(tr("Temperature"));;
+    pressureColLabel = new QLabel(tr("Pressure"));;
+    volumeColLabel = new QLabel(tr("Volume"));;
+    xLabel = new QLabel(tr("X - >"));;
+    xValueLabel = new QLabel(tr("Temp"));;
 
 //    invertedAppearance = new QCheckBox(tr("Inverted appearance"));
 //    invertedKeyBindings = new QCheckBox(tr("Inverted key bindings"));
 
-//! [4] //! [5]
 //    minimumSpinBox = new QSpinBox;
-//! [5] //! [6]
 //    minimumSpinBox->setRange(-100, 100);
 //    minimumSpinBox->setSingleStep(1);
 
@@ -109,9 +113,7 @@ void Window::createControls(const QString &title)
     orientationCombo->addItem(tr("Horizontal slider-like widgets"));
     orientationCombo->addItem(tr("Vertical slider-like widgets"));
 
-//! [6] //! [7]
     connect(orientationCombo, SIGNAL(activated(int)),
-//! [7] //! [8]
             stackedWidget, SLOT(setCurrentIndex(int)));
 //    connect(minimumSpinBox, SIGNAL(valueChanged(int)),
 //            horizontalSliders, SLOT(setMinimum(int)));
@@ -131,9 +133,18 @@ void Window::createControls(const QString &title)
 //            verticalSliders, SLOT(invertKeyBindings(bool)));
 
     QGridLayout *controlsLayout = new QGridLayout;
-    controlsLayout->addWidget(minimumLabel, 0, 0);
-    controlsLayout->addWidget(maximumLabel, 1, 0);
-    controlsLayout->addWidget(valueLabel, 2, 0);
+    controlsLayout->addWidget(quantityLabel, 0, 0);
+    controlsLayout->addWidget(temperatureLabel, 1, 0);
+    controlsLayout->addWidget(pressureLabel, 2, 0);
+    controlsLayout->addWidget(volumeLabel, 3, 0);
+    controlsLayout->addWidget(weightLabel, 0, 3);
+    controlsLayout->addWidget(xLabel, 1, 3);
+    controlsLayout->addWidget(xValueLabel, 1, 4);
+    controlsLayout->addWidget(quantityColLabel, 5, 0);
+    controlsLayout->addWidget(weightColLabel, 5, 1);
+    controlsLayout->addWidget(temperatureColLabel, 5, 2);
+    controlsLayout->addWidget(pressureColLabel, 5, 3);
+    controlsLayout->addWidget(volumeColLabel, 5, 4);
 //    controlsLayout->addWidget(minimumSpinBox, 0, 1);
 //    controlsLayout->addWidget(maximumSpinBox, 1, 1);
 //    controlsLayout->addWidget(valueSpinBox, 2, 1);
@@ -142,4 +153,3 @@ void Window::createControls(const QString &title)
     controlsLayout->addWidget(orientationCombo, 3, 0, 1, 3);
     controlsGroup->setLayout(controlsLayout);
 }
-//! [8]

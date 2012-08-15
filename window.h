@@ -53,7 +53,6 @@ class QStackedWidget;
 QT_END_NAMESPACE
 class SlidersGroup;
 
-//! [0]
 class Window : public QWidget
 {
     Q_OBJECT
@@ -69,9 +68,21 @@ private:
     QStackedWidget *stackedWidget;
 
     QGroupBox *controlsGroup;
-    QLabel *minimumLabel;
-    QLabel *maximumLabel;
-    QLabel *valueLabel;
+    QLabel *quantityLabel;
+    QLabel *weightLabel;
+    QLabel *temperatureLabel;
+    QLabel *pressureLabel;
+    QLabel *volumeLabel;
+    QLabel *quantityColLabel;
+    QLabel *weightColLabel;
+    QLabel *temperatureColLabel;
+    QLabel *pressureColLabel;
+    QLabel *volumeColLabel;
+    QLabel *xLabel;
+    QLabel *xValueLabel;
+//    QLabel *minimumLabel;
+//    QLabel *maximumLabel;
+//    QLabel *valueLabel;
 //    QCheckBox *invertedAppearance;
 //    QCheckBox *invertedKeyBindings;
 //    QSpinBox *minimumSpinBox;
@@ -79,6 +90,5 @@ private:
 //    QSpinBox *valueSpinBox;
     QComboBox *orientationCombo;
 };
-//! [0]
 
 #endif

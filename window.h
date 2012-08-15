@@ -42,6 +42,7 @@
 #define WINDOW_H
 
 #include <QWidget>
+#include <QPushButton>
 
 QT_BEGIN_NAMESPACE
 class QCheckBox;
@@ -50,6 +51,7 @@ class QGroupBox;
 class QLabel;
 class QSpinBox;
 class QStackedWidget;
+class QPushButton;
 QT_END_NAMESPACE
 class SlidersGroup;
 
@@ -88,6 +90,9 @@ private:
 //    QSpinBox *minimumSpinBox;
 //    QSpinBox *maximumSpinBox;
 //    QSpinBox *valueSpinBox;
+    QPushButton *simulateButton;
+    QPushButton *abortButton;
+    QPushButton *sortButton;
     QComboBox *sortCombo;
 };
 

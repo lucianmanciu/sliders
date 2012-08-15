@@ -109,6 +109,10 @@ void Window::createControls(const QString &title)
 //    valueSpinBox->setRange(-100, 100);
 //    valueSpinBox->setSingleStep(1);
 
+    simulateButton = new QPushButton("Simulate", this);
+    abortButton = new QPushButton("Abort", this);;
+    sortButton = new QPushButton("Sort", this);;
+
     sortCombo = new QComboBox;
     sortCombo->addItem(tr("Q"));
     sortCombo->addItem(tr("W"));
@@ -146,11 +150,14 @@ void Window::createControls(const QString &title)
     controlsLayout->addWidget(temperatureColLabel, 5, 2);
     controlsLayout->addWidget(pressureColLabel, 5, 3);
     controlsLayout->addWidget(volumeColLabel, 5, 4);
+    controlsLayout->addWidget(simulateButton, 4, 0);
+    controlsLayout->addWidget(abortButton, 4, 2);
+    controlsLayout->addWidget(sortButton, 4, 4);
 //    controlsLayout->addWidget(minimumSpinBox, 0, 1);
 //    controlsLayout->addWidget(maximumSpinBox, 1, 1);
 //    controlsLayout->addWidget(valueSpinBox, 2, 1);
 //    controlsLayout->addWidget(invertedAppearance, 0, 2);
 //    controlsLayout->addWidget(invertedKeyBindings, 1, 2);
-    controlsLayout->addWidget(sortCombo, 4, 3);
+    controlsLayout->addWidget(sortCombo, 4, 3, Qt::AlignRight);
     controlsGroup->setLayout(controlsLayout);
 }

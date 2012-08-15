@@ -92,7 +92,15 @@ void Window::createControls(const QString &title)
     pressureColLabel = new QLabel(tr("Pressure"));;
     volumeColLabel = new QLabel(tr("Volume"));;
     xLabel = new QLabel(tr("X - >"));;
-    xValueLabel = new QLabel(tr("Temp"));;
+    xValueLabel = new QLabel(tr("temp"));;
+
+    quantityLineEdit = new QLineEdit;
+    quantityLineEdit->setFixedWidth(60);
+    weightLineEdit = new QLineEdit;
+    weightLineEdit->setFixedWidth(60);
+    temperatureLineEdit = new QLineEdit;
+    temperatureLineEdit->setFixedWidth(60);
+    outputTextEdit = new QTextEdit;
 
 //    invertedAppearance = new QCheckBox(tr("Inverted appearance"));
 //    invertedKeyBindings = new QCheckBox(tr("Inverted key bindings"));
@@ -144,20 +152,24 @@ void Window::createControls(const QString &title)
     controlsLayout->addWidget(volumeLabel, 3, 0);
     controlsLayout->addWidget(weightLabel, 0, 3);
     controlsLayout->addWidget(xLabel, 1, 3);
-    controlsLayout->addWidget(xValueLabel, 1, 4);
-    controlsLayout->addWidget(quantityColLabel, 5, 0);
-    controlsLayout->addWidget(weightColLabel, 5, 1);
-    controlsLayout->addWidget(temperatureColLabel, 5, 2);
-    controlsLayout->addWidget(pressureColLabel, 5, 3);
-    controlsLayout->addWidget(volumeColLabel, 5, 4);
+    controlsLayout->addWidget(xValueLabel, 1, 4, Qt::AlignCenter);
+    controlsLayout->addWidget(quantityColLabel, 5, 0, Qt::AlignCenter);
+    controlsLayout->addWidget(weightColLabel, 5, 1, Qt::AlignCenter);
+    controlsLayout->addWidget(temperatureColLabel, 5, 2, Qt::AlignCenter);
+    controlsLayout->addWidget(pressureColLabel, 5, 3, Qt::AlignCenter);
+    controlsLayout->addWidget(volumeColLabel, 5, 4, Qt::AlignCenter);
     controlsLayout->addWidget(simulateButton, 4, 0);
     controlsLayout->addWidget(abortButton, 4, 2);
     controlsLayout->addWidget(sortButton, 4, 4);
+    controlsLayout->addWidget(sortCombo, 4, 3, Qt::AlignRight);
+    controlsLayout->addWidget(quantityLineEdit, 0, 1, Qt::AlignCenter);
+    controlsLayout->addWidget(weightLineEdit, 0, 4, Qt::AlignCenter);
+    controlsLayout->addWidget(temperatureLineEdit, 1, 1, Qt::AlignCenter);
+    controlsLayout->addWidget(outputTextEdit, 6, 0, 8, 5);
 //    controlsLayout->addWidget(minimumSpinBox, 0, 1);
 //    controlsLayout->addWidget(maximumSpinBox, 1, 1);
 //    controlsLayout->addWidget(valueSpinBox, 2, 1);
 //    controlsLayout->addWidget(invertedAppearance, 0, 2);
 //    controlsLayout->addWidget(invertedKeyBindings, 1, 2);
-    controlsLayout->addWidget(sortCombo, 4, 3, Qt::AlignRight);
     controlsGroup->setLayout(controlsLayout);
 }

@@ -43,6 +43,8 @@
 
 #include <QWidget>
 #include <QPushButton>
+#include <QLineEdit>
+#include <QTextEdit>
 
 QT_BEGIN_NAMESPACE
 class QCheckBox;
@@ -52,6 +54,8 @@ class QLabel;
 class QSpinBox;
 class QStackedWidget;
 class QPushButton;
+class QLineEdit;
+class QTextEdit;
 QT_END_NAMESPACE
 class SlidersGroup;
 
@@ -94,6 +98,10 @@ private:
     QPushButton *abortButton;
     QPushButton *sortButton;
     QComboBox *sortCombo;
+    QLineEdit *quantityLineEdit;
+    QLineEdit *weightLineEdit;
+    QLineEdit *temperatureLineEdit;
+    QTextEdit *outputTextEdit;
 };
 
 #endif

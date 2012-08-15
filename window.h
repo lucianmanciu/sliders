@@ -45,6 +45,7 @@
 #include <QPushButton>
 #include <QLineEdit>
 #include <QTextEdit>
+#include <QSlider>
 
 QT_BEGIN_NAMESPACE
 class QCheckBox;
@@ -56,6 +57,7 @@ class QStackedWidget;
 class QPushButton;
 class QLineEdit;
 class QTextEdit;
+class QSlider;
 QT_END_NAMESPACE
 class SlidersGroup;
 
@@ -102,6 +104,8 @@ private:
     QLineEdit *weightLineEdit;
     QLineEdit *temperatureLineEdit;
     QTextEdit *outputTextEdit;
+    QSlider *pressureSlider;
+    QSlider *volumeSlider;
 };
 
 #endif

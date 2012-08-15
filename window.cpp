@@ -126,6 +126,9 @@ void Window::createControls(const QString &title)
     sortCombo->addItem(tr("W"));
     sortCombo->addItem(tr("T"));
 
+    pressureSlider = new QSlider(Qt::Horizontal, this);
+    volumeSlider = new QSlider(Qt::Horizontal, this);
+
 //    connect(orientationCombo, SIGNAL(activated(int)),
 //            stackedWidget, SLOT(setCurrentIndex(int)));
 //    connect(minimumSpinBox, SIGNAL(valueChanged(int)),
@@ -151,7 +154,7 @@ void Window::createControls(const QString &title)
     controlsLayout->addWidget(pressureLabel, 2, 0);
     controlsLayout->addWidget(volumeLabel, 3, 0);
     controlsLayout->addWidget(weightLabel, 0, 2);
-    controlsLayout->addWidget(xLabel, 1, 2);
+    controlsLayout->addWidget(xLabel, 1, 2, Qt::AlignCenter);
     controlsLayout->addWidget(xValueLabel, 1, 3, Qt::AlignCenter);
 //    controlsLayout->addWidget(quantityColLabel, 5, 0, Qt::AlignCenter);
 //    controlsLayout->addWidget(weightColLabel, 5, 1, Qt::AlignCenter);
@@ -165,11 +168,13 @@ void Window::createControls(const QString &title)
     controlsLayout->addWidget(quantityLineEdit, 0, 1, Qt::AlignLeft);
     controlsLayout->addWidget(weightLineEdit, 0, 3, Qt::AlignLeft);
     controlsLayout->addWidget(temperatureLineEdit, 1, 1, Qt::AlignLeft);
-    controlsLayout->addWidget(outputTextEdit, 6, 0, 8, 5);
+    controlsLayout->addWidget(outputTextEdit, 6, 0, 8, 4);
 //    controlsLayout->addWidget(minimumSpinBox, 0, 1);
 //    controlsLayout->addWidget(maximumSpinBox, 1, 1);
 //    controlsLayout->addWidget(valueSpinBox, 2, 1);
 //    controlsLayout->addWidget(invertedAppearance, 0, 2);
 //    controlsLayout->addWidget(invertedKeyBindings, 1, 2);
+    controlsLayout->addWidget(pressureSlider, 2, 1, 1, 3);
+    controlsLayout->addWidget(volumeSlider, 3, 1, 1, 3);
     controlsGroup->setLayout(controlsLayout);
 }

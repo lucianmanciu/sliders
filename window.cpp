@@ -122,7 +122,9 @@ void Window::createControls(const QString &title)
 
     simulateButton = new QPushButton("Simulate", this);
     abortButton = new QPushButton("Abort", this);
+    abortButton->setEnabled(0);
     sortButton = new QPushButton("Sort", this);
+    sortButton->setEnabled(0);
 
     sortCombo = new QComboBox;
     sortCombo->addItem(tr("Q"));

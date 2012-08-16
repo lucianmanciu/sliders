@@ -67,9 +67,18 @@ class Window : public QWidget
 
 public:
     Window();
+    int getWeight();
+
+signals:
+    void textChanged(QString &w);
+
+public slots:
+    void setWeight(QString &w);
 
 private:
     void createControls(const QString &title);
+
+    int xval;
 
     SlidersGroup *horizontalSliders;
     SlidersGroup *verticalSliders;

@@ -52,8 +52,12 @@ Window::Window()
     stackedWidget->addWidget(horizontalSliders);
     stackedWidget->addWidget(verticalSliders);
 
+    xval=100;
+
     createControls(tr("Controls"));
 
+    connect(weightLineEdit, SIGNAL(textChanged(QString)),
+            xValueLabel, SLOT(setWeight(QString)));
     connect(horizontalSliders, SIGNAL(valueChanged(int)),
             verticalSliders, SLOT(setValue(int)));
 //    connect(verticalSliders, SIGNAL(valueChanged(int)),
@@ -76,7 +80,6 @@ Window::Window()
 void Window::createControls(const QString &title)
 {
     controlsGroup = new QGroupBox(title);
-    int xval=100;
 //    minimumLabel = new QLabel(tr("Minimum value:"));
 //    maximumLabel = new QLabel(tr("Maximum value:"));
 //    valueLabel = new QLabel(tr("Current value:"));
@@ -182,4 +185,16 @@ void Window::createControls(const QString &title)
     controlsLayout->addWidget(pressureSlider, 2, 1, 1, 3);
     controlsLayout->addWidget(volumeSlider, 3, 1, 1, 3);
     controlsGroup->setLayout(controlsLayout);
+}
+
+int Window::getWeight()
+{
+    return xval;
+}
+
+void Window::setWeight(QString &w)
+{   bool ok;
+    int x=w.toInt(&ok, 10);
+    if (ok)
+    xValueLabel->setNum(xval+x*10);
 }

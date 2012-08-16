@@ -69,12 +69,6 @@ public:
     Window();
     int getWeight();
 
-signals:
-    void textChanged(QString &w);
-
-public slots:
-    void setWeight(QString &w);
-
 private:
     void createControls(const QString &title);
 

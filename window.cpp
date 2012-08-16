@@ -57,7 +57,7 @@ Window::Window()
     createControls(tr("Controls"));
 
     connect(weightLineEdit, SIGNAL(textChanged(QString)),
-            xValueLabel, SLOT(setWeight(QString)));
+            xValueLabel, SLOT(setText(QString)));
     connect(horizontalSliders, SIGNAL(valueChanged(int)),
             verticalSliders, SLOT(setValue(int)));
 //    connect(verticalSliders, SIGNAL(valueChanged(int)),
@@ -192,9 +192,3 @@ int Window::getWeight()
     return xval;
 }
 
-void Window::setWeight(QString &w)
-{   bool ok;
-    int x=w.toInt(&ok, 10);
-    if (ok)
-    xValueLabel->setNum(xval+x*10);
-}

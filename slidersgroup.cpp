@@ -130,3 +130,4 @@ void SlidersGroup::invertKeyBindings(bool invert)
     dial->setInvertedControls(invert);
 }
 //! [14]
+

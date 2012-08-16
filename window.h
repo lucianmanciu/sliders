@@ -58,6 +58,7 @@ class QPushButton;
 class QLineEdit;
 class QTextEdit;
 class QSlider;
+class ProxyLineEdit;
 QT_END_NAMESPACE
 class SlidersGroup;
 
@@ -71,8 +72,6 @@ public:
 
 private:
     void createControls(const QString &title);
-
-    int xval;
 
     SlidersGroup *horizontalSliders;
     SlidersGroup *verticalSliders;
@@ -109,6 +108,19 @@ private:
     QTextEdit *outputTextEdit;
     QSlider *pressureSlider;
     QSlider *volumeSlider;
+    ProxyLineEdit *temp;
+};
+
+class ProxyLineEdit : public QObject
+{
+Q_OBJECT
+public:
+
+signals:
+void valueChanged(QString);
+
+public slots:
+void setValue(const QString &);
 };
 
 #endif

@@ -52,11 +52,11 @@ Window::Window()
     stackedWidget->addWidget(horizontalSliders);
     stackedWidget->addWidget(verticalSliders);
 
-    xval=100;
-
     createControls(tr("Controls"));
 
     connect(weightLineEdit, SIGNAL(textChanged(QString)),
+            temp, SLOT(setValue(QString)));
+    connect(temp, SIGNAL(valueChanged(QString)),
             xValueLabel, SLOT(setText(QString)));
     connect(horizontalSliders, SIGNAL(valueChanged(int)),
             verticalSliders, SLOT(setValue(int)));
@@ -94,8 +94,8 @@ void Window::createControls(const QString &title)
     pressureColLabel = new QLabel(tr("Pressure"));
     volumeColLabel = new QLabel(tr("Volume"));
     xLabel = new QLabel(tr("X - >"));;
-    xValueLabel = new QLabel(tr(""));
-    xValueLabel->setNum(xval);
+    xValueLabel = new QLabel(tr("100"));
+    temp = new ProxyLineEdit();
 
     quantityLineEdit = new QLineEdit;
     quantityLineEdit->setFixedWidth(75);
@@ -189,6 +189,15 @@ void Window::createControls(const QString &title)
 
 int Window::getWeight()
 {
-    return xval;
+    bool ok;
+    int x=xValueLabel->text().toInt(&ok,10);
+    return x;
+}
+
+void ProxyLineEdit::setValue(const QString &v)
+{
+    int newValue = v.toInt();
+    newValue+=100;
+    emit valueChanged(QString::number(newValue));
 }
 

@@ -73,6 +73,8 @@ private:
     QScrollBar *scrollBar;
     QDial *dial;
 };
+
+
 //! [0]
 
 #endif

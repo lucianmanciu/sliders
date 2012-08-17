@@ -18,3 +18,6 @@ symbian: warning(This example might not fully work on Symbian platform)
 maemo5: warning(This example might not fully work on Maemo platform)
 contains(MEEGO_EDITION,harmattan): warning(This example might not fully work on Harmattan platform)
 simulator: warning(This example might not fully work on Simulator platform)
+
+OTHER_FILES += \
+    images/cheese.jpg

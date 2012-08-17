@@ -38,8 +38,6 @@
 **
 ****************************************************************************/
 
-#include <QtGui>
-
 #include "slidersgroup.h"
 #include "window.h"
 
@@ -47,6 +45,20 @@ Window::Window()
 {
     horizontalSliders = new SlidersGroup(Qt::Horizontal, tr("Simulation"));
     verticalSliders = new SlidersGroup(Qt::Vertical, tr("Simulation"));
+
+    QGraphicsScene scene;
+    scene.setSceneRect(-300, -300, 300, 300);
+    scene.setItemIndexMethod(QGraphicsScene::NoIndex);
+
+    QGraphicsView view(&scene);
+    view.setRenderHint(QPainter::Antialiasing);
+    view.setBackgroundBrush(QPixmap(":/images/cheese.jpg"));
+    view.setCacheMode(QGraphicsView::CacheBackground);
+    view.setViewportUpdateMode(QGraphicsView::BoundingRectViewportUpdate);
+    view.setDragMode(QGraphicsView::ScrollHandDrag);
+    view.setWindowTitle(QT_TRANSLATE_NOOP(QGraphicsView, "Simulation"));
+    view.resize(600, 600);
+//    view.show();
 
     stackedWidget = new QStackedWidget;
     stackedWidget->addWidget(horizontalSliders);

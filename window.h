@@ -47,6 +47,9 @@
 #include <QTextEdit>
 #include <QSlider>
 #include <QString>
+#include <QtGui>
+#include <QGraphicsScene>
+#include <QGraphicsItem>
 
 QT_BEGIN_NAMESPACE
 class QCheckBox;
@@ -60,6 +63,8 @@ class QLineEdit;
 class QTextEdit;
 class QSlider;
 class QString;
+class QGraphicsScene;
+class QGraphicsView;
 QT_END_NAMESPACE
 class SlidersGroup;
 class ProxyLineEdit;
@@ -69,7 +74,7 @@ class Window : public QWidget
     Q_OBJECT
 
 public:
-    Window();
+    Window();  
     int getWeight();
 
 private:
@@ -78,7 +83,6 @@ private:
     SlidersGroup *horizontalSliders;
     SlidersGroup *verticalSliders;
     QStackedWidget *stackedWidget;
-
     QGroupBox *controlsGroup;
     QLabel *quantityLabel;
     QLabel *weightLabel;

@@ -46,21 +46,23 @@
 #include <QLineEdit>
 #include <QTextEdit>
 #include <QSlider>
+#include <QString>
 
 QT_BEGIN_NAMESPACE
 class QCheckBox;
 class QComboBox;
 class QGroupBox;
 class QLabel;
-class QSpinBox;
+//class QSpinBox;
 class QStackedWidget;
 class QPushButton;
 class QLineEdit;
 class QTextEdit;
 class QSlider;
-class ProxyLineEdit;
+class QString;
 QT_END_NAMESPACE
 class SlidersGroup;
+class ProxyLineEdit;
 
 class Window : public QWidget
 {
@@ -98,6 +100,7 @@ private:
 //    QSpinBox *minimumSpinBox;
 //    QSpinBox *maximumSpinBox;
 //    QSpinBox *valueSpinBox;
+    QString *str;
     QPushButton *simulateButton;
     QPushButton *abortButton;
     QPushButton *sortButton;

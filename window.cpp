@@ -94,7 +94,7 @@ void Window::createControls(const QString &title)
     pressureColLabel = new QLabel(tr("Pressure"));
     volumeColLabel = new QLabel(tr("Volume"));
     xLabel = new QLabel(tr("X - >"));;
-    xValueLabel = new QLabel(tr("100"));
+    xValueLabel = new QLabel(tr("100 N"));
     temp = new ProxyLineEdit();
 
     quantityLineEdit = new QLineEdit;
@@ -187,17 +187,17 @@ void Window::createControls(const QString &title)
     controlsGroup->setLayout(controlsLayout);
 }
 
-int Window::getWeight()
-{
-    bool ok;
-    int x=xValueLabel->text().toInt(&ok,10);
-    return x;
-}
+//int Window::getWeight()
+//{
+//    str = new QString(xValueLabel->text());
+//    str.truncate(str.size()-2);
+//    return str.toInt();
+//}
 
 void ProxyLineEdit::setValue(const QString &v)
 {
     int newValue = v.toInt();
-    newValue+=100;
-    emit valueChanged(QString::number(newValue));
+    newValue=newValue*10+100;
+    emit valueChanged(QString::number(newValue)+=" N");
 }
 

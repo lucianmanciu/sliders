@@ -201,12 +201,13 @@ void Window::createControls(const QString &title)
     controlsGroup->setLayout(controlsLayout);
 }
 
-//int Window::getWeight()
-//{
-//    str = new QString(xValueLabel->text());
-//    str.truncate(str.size()-2);
-//    return str.toInt();
-//}
+int Window::getWeight()
+{
+    if (weightLineEdit)
+      return weightLineEdit->text().toInt();
+
+    return 0;
+}
 
 void ProxyLineEdit::setValue(const QString &v)
 {

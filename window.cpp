@@ -79,7 +79,9 @@ Window::Window()
 
     QHBoxLayout *layout = new QHBoxLayout;
     layout->addWidget(stackedWidget);
+//    layout->addWidget(view);
     layout->addWidget(controlsGroup);
+
     setLayout(layout);
 
 //    minimumSpinBox->setValue(0);

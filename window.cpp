@@ -212,7 +212,10 @@ int Window::getWeight()
 void ProxyLineEdit::setValue(const QString &v)
 {
     int newValue = v.toInt();
-    newValue=newValue*10+100;
+    if (newValue<0)
+        newValue=100;
+    else
+        newValue=newValue*10+100;
     emit valueChanged(QString::number(newValue)+=" N");
 }
 

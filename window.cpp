@@ -204,7 +204,7 @@ void Window::createControls(const QString &title)
 int Window::getWeight()
 {
     if (weightLineEdit)
-      return weightLineEdit->text().toInt();
+      return weightLineEdit->text().toInt()*10+100;
 
     return 0;
 }

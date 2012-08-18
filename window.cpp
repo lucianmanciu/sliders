@@ -47,17 +47,17 @@ Window::Window()
     verticalSliders = new SlidersGroup(Qt::Vertical, tr("Simulation"));
 
     scene = new QGraphicsScene;
-    scene.setSceneRect(-300, -300, 300, 300);
-    scene.setItemIndexMethod(QGraphicsScene::NoIndex);
+    scene->setSceneRect(-300, -300, 300, 300);
+    scene->setItemIndexMethod(QGraphicsScene::NoIndex);
 
-    view = new QGraphicsView(&scene);
-    view.setRenderHint(QPainter::Antialiasing);
-    view.setBackgroundBrush(QPixmap(":/images/cheese.jpg"));
-    view.setCacheMode(QGraphicsView::CacheBackground);
-    view.setViewportUpdateMode(QGraphicsView::BoundingRectViewportUpdate);
-    view.setDragMode(QGraphicsView::ScrollHandDrag);
-    view.setWindowTitle(QT_TRANSLATE_NOOP(QGraphicsView, "Simulation"));
-    view.resize(600, 600);
+    view = new QGraphicsView(scene);
+    view->setRenderHint(QPainter::Antialiasing);
+    view->setBackgroundBrush(QPixmap(":/images/cheese.jpg"));
+    view->setCacheMode(QGraphicsView::CacheBackground);
+    view->setViewportUpdateMode(QGraphicsView::BoundingRectViewportUpdate);
+    view->setDragMode(QGraphicsView::ScrollHandDrag);
+    view->setWindowTitle(QT_TRANSLATE_NOOP(QGraphicsView, "Simulation"));
+    view->resize(600, 600);
 //    view.show();
 
     stackedWidget = new QStackedWidget;

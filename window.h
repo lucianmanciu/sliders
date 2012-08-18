@@ -116,6 +116,8 @@ private:
     QSlider *pressureSlider;
     QSlider *volumeSlider;
     ProxyLineEdit *temp;
+    QGraphicsScene *scene;
+    QGraphicsView *view;
 };
 
 class ProxyLineEdit : public QObject

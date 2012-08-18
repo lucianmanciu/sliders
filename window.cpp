@@ -46,11 +46,11 @@ Window::Window()
     horizontalSliders = new SlidersGroup(Qt::Horizontal, tr("Simulation"));
     verticalSliders = new SlidersGroup(Qt::Vertical, tr("Simulation"));
 
-    QGraphicsScene scene;
+    scene = new QGraphicsScene;
     scene.setSceneRect(-300, -300, 300, 300);
     scene.setItemIndexMethod(QGraphicsScene::NoIndex);
 
-    QGraphicsView view(&scene);
+    view = new QGraphicsView(&scene);
     view.setRenderHint(QPainter::Antialiasing);
     view.setBackgroundBrush(QPixmap(":/images/cheese.jpg"));
     view.setCacheMode(QGraphicsView::CacheBackground);
@@ -79,7 +79,7 @@ Window::Window()
 
     QHBoxLayout *layout = new QHBoxLayout;
     layout->addWidget(stackedWidget);
-//    layout->addWidget(view);
+    layout->addWidget(view);
     layout->addWidget(controlsGroup);
 
     setLayout(layout);

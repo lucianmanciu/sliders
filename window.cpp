@@ -204,9 +204,16 @@ void Window::createControls(const QString &title)
 int Window::getWeight()
 {
     if (weightLineEdit)
-      return weightLineEdit->text().toInt()*10+100;
+    {
+        int tempWeight = weightLineEdit->text().toInt();
+        if (tempWeight<0)
+            tempWeight=100;
+        else
+            tempWeight=tempWeight*10+100;
+        return tempWeight;
+    }
 
-    return 0;
+    return 100;
 }
 
 void ProxyLineEdit::setValue(const QString &v)

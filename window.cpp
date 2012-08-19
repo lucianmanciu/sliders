@@ -55,7 +55,7 @@ Window::Window()
     view->setBackgroundBrush(QPixmap("C:/bin/QtSDK/Examples/4.7/widgets/sliders/images/cheese.jpg"));
     view->setCacheMode(QGraphicsView::CacheBackground);
     view->setViewportUpdateMode(QGraphicsView::BoundingRectViewportUpdate);
-    view->setDragMode(QGraphicsView::ScrollHandDrag);
+    view->setDragMode(QGraphicsView::NoDrag);
     view->setWindowTitle(QT_TRANSLATE_NOOP(QGraphicsView, "Simulation"));
     view->resize(600, 600);
 //    view.show();

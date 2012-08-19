@@ -38,13 +38,13 @@
 **
 ****************************************************************************/
 
-#include "slidersgroup.h"
+//#include "slidersgroup.h"
 #include "window.h"
 
 Window::Window()
 {
-    horizontalSliders = new SlidersGroup(Qt::Horizontal, tr("Simulation"));
-    verticalSliders = new SlidersGroup(Qt::Vertical, tr("Simulation"));
+//    horizontalSliders = new SlidersGroup(Qt::Horizontal, tr("Simulation"));
+//    verticalSliders = new SlidersGroup(Qt::Vertical, tr("Simulation"));
 
     scene = new QGraphicsScene;
     scene->setSceneRect(-300, -300, 300, 300);
@@ -52,7 +52,7 @@ Window::Window()
 
     view = new QGraphicsView(scene);
     view->setRenderHint(QPainter::Antialiasing);
-    view->setBackgroundBrush(QPixmap(":/images/cheese.jpg"));
+    view->setBackgroundBrush(QPixmap("C:/bin/QtSDK/Examples/4.7/widgets/sliders/images/cheese.jpg"));
     view->setCacheMode(QGraphicsView::CacheBackground);
     view->setViewportUpdateMode(QGraphicsView::BoundingRectViewportUpdate);
     view->setDragMode(QGraphicsView::ScrollHandDrag);
@@ -60,9 +60,9 @@ Window::Window()
     view->resize(600, 600);
 //    view.show();
 
-    stackedWidget = new QStackedWidget;
-    stackedWidget->addWidget(horizontalSliders);
-    stackedWidget->addWidget(verticalSliders);
+//    stackedWidget = new QStackedWidget;
+//    stackedWidget->addWidget(horizontalSliders);
+//    stackedWidget->addWidget(verticalSliders);
 
     createControls(tr("Controls"));
 
@@ -70,15 +70,15 @@ Window::Window()
             temp, SLOT(setValue(QString)));
     connect(temp, SIGNAL(valueChanged(QString)),
             xValueLabel, SLOT(setText(QString)));
-    connect(horizontalSliders, SIGNAL(valueChanged(int)),
-            verticalSliders, SLOT(setValue(int)));
+//    connect(horizontalSliders, SIGNAL(valueChanged(int)),
+//            verticalSliders, SLOT(setValue(int)));
 //    connect(verticalSliders, SIGNAL(valueChanged(int)),
 //            valueSpinBox, SLOT(setValue(int)));
 //    connect(valueSpinBox, SIGNAL(valueChanged(int)),
 //            horizontalSliders, SLOT(setValue(int)));
 
     QHBoxLayout *layout = new QHBoxLayout;
-    layout->addWidget(stackedWidget);
+//    layout->addWidget(stackedWidget);
     layout->addWidget(view);
     layout->addWidget(controlsGroup);
 

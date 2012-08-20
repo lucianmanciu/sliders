@@ -205,7 +205,7 @@ int Window::getWeight()
 {
     if (weightLineEdit)
     {
-        int tempWeight = weightLineEdit->text().toInt();
+        float tempWeight = weightLineEdit->text().toFloat();
         if (tempWeight<0)
             tempWeight=100;
         else
@@ -218,7 +218,7 @@ int Window::getWeight()
 
 void ProxyLineEdit::setValue(const QString &v)
 {
-    int newValue = v.toInt();
+    float newValue = v.toFloat();
     if (newValue<0)
         newValue=100;
     else

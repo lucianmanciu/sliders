@@ -47,7 +47,7 @@ Window::Window()
 //    verticalSliders = new SlidersGroup(Qt::Vertical, tr("Simulation"));
 
     scene = new QGraphicsScene;
-    scene->setSceneRect(-300, -300, 300, 300);
+    scene->setSceneRect(0, 0, 300, 300);
     scene->setItemIndexMethod(QGraphicsScene::NoIndex);
 
     view = new QGraphicsView(scene);
@@ -57,7 +57,7 @@ Window::Window()
     view->setViewportUpdateMode(QGraphicsView::BoundingRectViewportUpdate);
     view->setDragMode(QGraphicsView::NoDrag);
     view->setWindowTitle(QT_TRANSLATE_NOOP(QGraphicsView, "Simulation"));
-    view->resize(600, 600);
+//    view->resize(600, 600);
 //    view.show();
 
 //    stackedWidget = new QStackedWidget;

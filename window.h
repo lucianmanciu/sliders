@@ -49,7 +49,6 @@
 #include <QString>
 #include <QtGui>
 #include <QGraphicsScene>
-#include <QGraphicsItem>
 
 QT_BEGIN_NAMESPACE
 class QCheckBox;

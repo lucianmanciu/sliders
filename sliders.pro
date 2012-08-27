@@ -1,8 +1,10 @@
 HEADERS     = slidersgroup.h \
-              window.h
+              window.h \
+    cylinder.h
 SOURCES     = main.cpp \
               slidersgroup.cpp \
-              window.cpp
+              window.cpp \
+    cylinder.cpp
 
 # install
 target.path = $$[QT_INSTALL_EXAMPLES]/widgets/sliders

@@ -40,14 +40,13 @@ void Cylinder::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidge
     dottedLine = new QLine(40, 0, 120, 0);
     painter->drawLine(*dottedLine);
 
-    QPoint vPoint(-145, 0);
+    QPoint vPoint(-130, 0);
     QPoint wPoint(100, -150);
-    QPoint tPoint(-10, 135);
+    QPoint tPoint(-30, 145);
     QPoint xPoint(90, -5);
     QPoint yPoint(90, 15);
     QPoint qPoint(100, 150);
 
-//Qt::TextWordWrap,
     painter->drawText(vPoint, "v");
     painter->drawText(wPoint, "w");
     painter->drawText(tPoint, "t");

@@ -56,7 +56,7 @@ class QComboBox;
 class QGroupBox;
 class QLabel;
 //class QSpinBox;
-class QStackedWidget;
+//class QStackedWidget;
 class QPushButton;
 class QLineEdit;
 class QTextEdit;
@@ -65,7 +65,7 @@ class QString;
 class QGraphicsScene;
 class QGraphicsView;
 QT_END_NAMESPACE
-class SlidersGroup;
+//class SlidersGroup;
 class ProxyLineEdit;
 
 class Window : public QWidget
@@ -79,9 +79,9 @@ public:
 private:
     void createControls(const QString &title);
 
-    SlidersGroup *horizontalSliders;
-    SlidersGroup *verticalSliders;
-    QStackedWidget *stackedWidget;
+//    SlidersGroup *horizontalSliders;
+//    SlidersGroup *verticalSliders;
+//    QStackedWidget *stackedWidget;
     QGroupBox *controlsGroup;
     QLabel *quantityLabel;
     QLabel *weightLabel;

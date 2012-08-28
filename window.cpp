@@ -40,6 +40,7 @@
 
 //#include "slidersgroup.h"
 #include "window.h"
+#include "cylinder.h"
 
 Window::Window()
 {

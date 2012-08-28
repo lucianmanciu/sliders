@@ -19,22 +19,22 @@ void Cylinder::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidge
 
     painter->setBrush(QColor(0, 0, 0));
 
-    QPainterPath piston;
-    piston.moveTo(-90, 0);
-    piston.lineTo(40, 0);
-    piston.moveTo(-25, 0);
-    piston.lineTo(-25, -300);
-    piston.moveTo(80, -60);
-    piston.lineTo(80, 60);
-    piston.moveTo(75, -10);
-    piston.lineTo(85, 10);
-    piston.lineTo(75, 10);
-    piston.lineTo(85, -10);
-    piston.lineTo(75, -10);
+    piston = new QPainterPath;
+    piston->moveTo(-90, 0);
+    piston->lineTo(40, 0);
+    piston->moveTo(-25, 0);
+    piston->lineTo(-25, -300);
+    piston->moveTo(80, -60);
+    piston->lineTo(80, 60);
+    piston->moveTo(75, -10);
+    piston->lineTo(85, 10);
+    piston->lineTo(75, 10);
+    piston->lineTo(85, -10);
+    piston->lineTo(75, -10);
 
-    painter->drawPath(piston);
+    painter->drawPath(*piston);
     painter->setPen(Qt::DotLine);
 
-    QLine dottedLine(40, 0, 120, 0);
-    painter->drawLine(dottedLine);
+    dottedLine = new QLine(40, 0, 120, 0);
+    painter->drawLine(*dottedLine);
 }

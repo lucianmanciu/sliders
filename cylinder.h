@@ -15,6 +15,10 @@ public:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
                  QWidget *widget);
 
+private:
+    QPainterPath *piston;
+    QLine *dottedLine;
+
 signals:
     
 public slots:

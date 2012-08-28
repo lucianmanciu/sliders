@@ -3,6 +3,7 @@
 Cylinder::Cylinder()
 {
 }
+
 QRectF Cylinder::boundingRect() const
 {
     qreal penWidth = 1;

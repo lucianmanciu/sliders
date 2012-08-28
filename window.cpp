@@ -61,6 +61,10 @@ Window::Window()
 //    view->resize(600, 600);
 //    view.show();
 
+    Cylinder *cylinder = new Cylinder;
+    cylinder->setPos(150, 150);
+    scene->addItem(cylinder);
+
 //    stackedWidget = new QStackedWidget;
 //    stackedWidget->addWidget(horizontalSliders);
 //    stackedWidget->addWidget(verticalSliders);

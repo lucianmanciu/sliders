@@ -53,7 +53,7 @@ Window::Window()
 
     view = new QGraphicsView(scene);
     view->setRenderHint(QPainter::Antialiasing);
-    view->setBackgroundBrush(QPixmap("C:/bin/QtSDK/Examples/4.7/widgets/sliders/images/cheese.jpg"));
+//    view->setBackgroundBrush(QPixmap("C:/bin/QtSDK/Examples/4.7/widgets/sliders/images/cheese.jpg"));
     view->setCacheMode(QGraphicsView::CacheBackground);
     view->setViewportUpdateMode(QGraphicsView::BoundingRectViewportUpdate);
     view->setDragMode(QGraphicsView::NoDrag);

@@ -6,7 +6,7 @@ Cylinder::Cylinder()
 
 QRectF Cylinder::boundingRect() const
 {
-    qreal penWidth = 3;
+    qreal penWidth = 1;
     return QRectF(-10 - penWidth / 2, -10 - penWidth / 2,
                   20 + penWidth, 20 + penWidth);
 }
@@ -17,6 +17,13 @@ void Cylinder::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidge
     painter->drawLine(-90, -120, -90, 120);
     painter->drawLine(-90, 120, 40, 120 );
     painter->drawLine(40, 120, 40, -120);
+    painter->drawLine(-90, 0, 40, 0);
+    painter->drawLine(-25, -300, -25 , 0);
+    painter->drawLine(80, 0, 80, -60);
+    painter->drawLine(80, 0, 80, 60);
+    painter->setPen(Qt::DotLine);
+    painter->drawLine(40, 0, 120, 0);
+
 //    QPainterPath path;
 //    path.addRect(20, 20, 60, 60);
 

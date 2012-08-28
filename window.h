@@ -74,7 +74,7 @@ class Window : public QWidget
 
 public:
     Window();  
-    int getWeight();
+    float getWeight();
 
 private:
     void createControls(const QString &title);

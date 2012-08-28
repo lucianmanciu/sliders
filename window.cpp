@@ -206,7 +206,7 @@ void Window::createControls(const QString &title)
     controlsGroup->setLayout(controlsLayout);
 }
 
-int Window::getWeight()
+float Window::getWeight()
 {
     if (weightLineEdit)
     {
